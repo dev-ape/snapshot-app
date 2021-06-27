@@ -19,11 +19,11 @@ export default function Card(props) {
             <div className = "resultCard">
                 <div class="container table-responsive mt-5">
                 <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 ">
                 <div id="before" class="loader--1">
                 </div>
                 <div id ="after">
-                <table class="table table-borderless col-md-5">
+                <table class="table  table-border col-md-5">
                     <thead>
                         <tr>
                         <th scope="col">Tier</th>

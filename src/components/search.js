@@ -13,23 +13,30 @@ function SearchBar(props) {
             onSearch(searchText)
         }
     }
+
+    const handleClick = (e) => {
+      if (e){
+        onSearch(searchText)
+      }
+    }
+
+
+
     // This is the constructor that shall store our data retrieved from the database
    return (
-    <div class="container-fluid">
+    <div class="container mt-5">
       <div class="row text-center search-area">
-        <div class="col-xs-12 text-center area1">
+        <div class="col-md-6 offset-md-3">
           
-          <div class="row">
-            <div class="input-group search-area col-xs-8 col-xs-offset-2 text-center d-flex justify-content-center">
-              <span class="input input--minoru">
-              <input className="input__field input__field--yoko" onChange={handleInput} onKeyPress={handleEnterKeyPressed} 
-                value={searchText} type ="text" placeholder="Write your wallet address"/>
-                <label class="input__label input__label--yoko" for="input">
-                  <span class="input__label-content input__label-content--yoko">Wallet Search</span>
-                </label>
+              <div class="input-group rounded">
+              <input type="search" class="form-control rounded" onChange={handleInput} onKeyPress={handleEnterKeyPressed} 
+                value={searchText}placeholder="Write your wallet address" aria-label="Search"
+              aria-describedby="search-addon" />
+              <span class="input-group-text border-0" id="search-addon" onClick={handleClick}>
+              <i class="fas fa-search" ></i>
               </span>
-            </div>
-          </div>
+              </div>
+              
         </div>
       </div>
     </div>
