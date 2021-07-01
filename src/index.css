@@ -3,6 +3,7 @@ body {
   font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -13,6 +14,7 @@ body, html {
     margin: 0;
     background: #22303b;
     min-width: 320px;
+    
   }
   
   a {
@@ -273,7 +275,7 @@ body, html {
 
    footer {
     width: 100%;
-    position:fixed;
+    position:static;
     bottom: 0;
     background: #22303b;
     display: flex;
@@ -281,7 +283,7 @@ body, html {
     flex-direction: column;
     text-align: center;
     color: #fff;
-    padding: 20px;
+    padding: 40px;
 }
 .text {
     font-size: 28px;
