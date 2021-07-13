@@ -28,12 +28,14 @@ export default function Card(props) {
                         <tr>
                         <th scope="col">Tier</th>
                         <th scope="col">Average</th>
+                        <th scope="col">Last Snapshot</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <td>{wallet.tier}</td>
                         <td>{wallet.average}</td>
+                        <td>{wallet.timestamp}</td>
                         </tr>
                     </tbody>
                     </table>
