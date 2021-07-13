@@ -28,7 +28,7 @@ export default function Card(props) {
                         <tr>
                         <th scope="col">Tier</th>
                         <th scope="col">Average</th>
-                        <th scope="col">Last Snapshot</th>
+                        <th scope="col">Last Snapshot (UTC)</th>
                         </tr>
                     </thead>
                     <tbody>
