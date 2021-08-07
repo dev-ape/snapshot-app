@@ -17,13 +17,13 @@ export default function Card(props) {
     
         return (
             <div className = "resultCard">
-                <div class="container table-responsive mt-5">
-                <div class="row">
-                <div class="col-md-6 offset-md-3 ">
-                <div id="before" class="loader--1">
+                <div className="container table-responsive mt-4 mb-5">
+                <div className="row">
+                <div className="col-md-6 offset-md-3 ">
+                <div id="before" className="loader--1">
                 </div>
                 <div id ="after">
-                <table class="table  table-border col-md-5">
+                <table className="table  table-border col-md-5">
                     <thead>
                         <tr>
                         <th scope="col">Tier</th>
