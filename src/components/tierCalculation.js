@@ -14,8 +14,11 @@ export default function TierCalculation(props) {
 
     const { wallet } = props;
     const now = moment();
-    const startDate = moment(new Date('08-03-2021 01:00 PM'), 'YYYY-MMM-DD HH:mm A'); // TODO: Fetch this date from wallet
-    const endDate = moment(new Date('08-30-20210 01:00 PM'), 'YYYY-MMM-DD HH:mm A'); // TODO: Fetch this date from wallet
+    
+    var day = new Date(2021, 7, 3);
+    var day1 = new Date(2021, 7, 30);
+    const startDate = moment(day, 'YYYY-MM-DD');// TODO: Fetch this date from wallet
+    const endDate = moment(day1, 'YYYY-MM-DD');// TODO: Fetch this date from wallet
     const totalDays = endDate.diff(startDate, 'days') + 1;
     const remainingDays = endDate.diff(now, 'days') + 1;
     const passedDays = now.diff(startDate, 'days') + 1;
