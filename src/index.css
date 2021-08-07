@@ -40,6 +40,10 @@ body, html {
   .results {
     text-align: left;
   }
+
+  .result {
+      color: #fff;
+  }
   
   #entry-results {
     margin-bottom: 50px;
@@ -317,4 +321,34 @@ body, html {
 }
 #search-addon {
     cursor: pointer;
+}
+
+.tier-calculcation {
+    color: #000;
+}
+
+.card {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0px 0px 15px -1px #238385;
+    border-color: #238385;
+}
+
+.card a, .card a:visited {
+    color: #31b0b3
+}
+
+.card a:hover {
+    color: skyblue;
+}
+
+.form-select {
+    font-size: 14px;
+}
+
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
 }
