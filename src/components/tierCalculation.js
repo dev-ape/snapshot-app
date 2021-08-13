@@ -41,7 +41,7 @@ export default function TierCalculation(props) {
         setState(prevState => {
             return {
                 ...prevState,
-                requiredTape: requiredTape >= wallet.average && wallet.average >= targetValue ? wallet.average : requiredTape
+                requiredTape: requiredTape >= wallet.average && wallet.average >= targetValue ? targetValue : requiredTape
             };
         });
     }
