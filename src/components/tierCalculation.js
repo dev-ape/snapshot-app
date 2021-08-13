@@ -32,7 +32,7 @@ export default function TierCalculation(props) {
     }
 
     const calculateTargetTier = (targetValue) => {
-        const additionalDays = wallet.average >= targetValue ? 0 : 1; // Do not count today for upper tiers
+        const additionalDays = wallet.average > targetValue ? 0 : 1; // Do not count today for upper tiers
         const totalDays = endDate.diff(startDate, 'days') + additionalDays;
         const remainingDays = endDate.diff(now, 'days') + additionalDays;
         const passedDays = now.diff(startDate, 'days') + additionalDays;
