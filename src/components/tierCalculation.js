@@ -41,7 +41,7 @@ export default function TierCalculation(props) {
         setState(prevState => {
             return {
                 ...prevState,
-                requiredTape
+                requiredTape: requiredTape >= wallet.average && wallet.average >= targetValue ? targetValue : requiredTape
             };
         });
     }
@@ -68,10 +68,14 @@ export default function TierCalculation(props) {
                         <div className="card-text">             
                             { state.requiredTape > 0 ?
                             <p>
-                                You need to 
+                                <span>You need to</span>
+                                { state.requiredTape > wallet.average ? 
                                 <a href="https://app.apeswap.finance/swap?outputCurrency=0xf63400ee0420ce5b1ebdee0c942d7de1c734a41f" target="_blank">
                                 &nbsp;<i class="bi bi-cart4"></i> have {state.requiredTape} $TAPE now&nbsp;
                                 </a> 
+                                :
+                                <span>&nbsp;hold {state.requiredTape} $TAPE&nbsp;</span>
+                                }
                                 to become this tier until IDO:
                             </p>
                             : 
