@@ -13,14 +13,17 @@ const Tiers = {
 export default function TierCalculation(props) {
 
     const { wallet } = props;
-    const now = moment();
-    
-    var day = new Date(2021, 7, 3);
-    var day1 = new Date(2021, 7, 30);
-    const startDate = moment(day, 'YYYY-MM-DD');// TODO: Fetch this date from wallet
-    const endDate = moment(day1, 'YYYY-MM-DD');// TODO: Fetch this date from wallet
-    const projectName = 'Duel Network'; // TOOD: Fetch project name from wallet
-    const isIdoDay = endDate.diff(now, 'days') === 0;
+
+    const parseDate = (dateString) => {
+        const dateParts = dateString.split('-');
+        return new Date(dateParts[2], parseInt(dateParts[1]) - 1, dateParts[0]);
+    }
+
+    const now = moment();    
+    const startDate = moment(parseDate(wallet.startDate), 'YYYY-MM-DD');
+    const endDate = moment(parseDate(wallet.endDate), 'YYYY-MM-DD');
+    const projectName = wallet.projectName;
+    const isIdoDay = endDate.diff(now, 'hours') === 0;
 
     const [state, setState] = useState({
         requiredTape: 0
@@ -51,13 +54,13 @@ export default function TierCalculation(props) {
     }, []);
     
     return (
-        <div className="container tier-calculcation">
-            <div className="card col-md-4 offset-md-4">
+        <div className="tier-calculcation">
+            <div className="card">
                 <div className="card-body p-4">
                     <h5 className="card-title">
                         {projectName}: 
                     </h5>
-                    <h6 className="card-subtitle mb-4 text-muted">
+                    <h6 className="card-subtitle mb-3 text-muted">
                         <Moment format={'DD MMMM'}>{startDate}</Moment> - <Moment format={'DD MMMM'}>{endDate}</Moment>
                     </h6>
 
@@ -71,7 +74,7 @@ export default function TierCalculation(props) {
                                 <span>You need to</span>
                                 { state.requiredTape > wallet.average ? 
                                 <a href="https://app.apeswap.finance/swap?outputCurrency=0xf63400ee0420ce5b1ebdee0c942d7de1c734a41f" target="_blank">
-                                &nbsp;<i class="bi bi-cart4"></i> have {state.requiredTape} $TAPE now&nbsp;
+                                &nbsp;<i className="bi bi-cart4"></i> have {state.requiredTape} $TAPE now&nbsp;
                                 </a> 
                                 :
                                 <span>&nbsp;hold {state.requiredTape} $TAPE&nbsp;</span>
