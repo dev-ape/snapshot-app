@@ -14,39 +14,22 @@ import Moment from 'react-moment';
 
 Moment.globalFormat = 'DD-MM-YYYY';
 
-function App() {
-    const [state, setState] = useState({
-        results :[],
-        isQueryFinished: false
-    });
+export class App extends React.Component {
 
-    const onSearch = async(text) => {
-        setState(prevState => { 
-            return { 
-                ...prevState, 
-                isQueryFinished: false 
-            }
-        });
-
-        const results = await source.get("/record/" + text);
-        
-        setState(prevState => {
-            return {
-                ...prevState, 
-                results: results,
-                isQueryFinished: true
-            }
-        })
+    onSearch(text){
+        this.cardList.onWalletSearch(text);
     }
 
-    return(
-        <div className="App">
+    render() {
+        return(
+            <div className="App">
                 <Navbar />
-                <SearchBar onSearch = {onSearch} />
-                <CardList results = {state.results} isQueryFinished = {state.isQueryFinished} />
+                <SearchBar onSearch={this.onSearch.bind(this)} />
+                <CardList ref={cardList => this.cardList = cardList} />
                 <Footer />
-        </div>
-    )
+            </div>
+        );
+    }
    
 }
 export default App;
