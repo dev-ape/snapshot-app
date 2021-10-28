@@ -79,6 +79,7 @@ export class CardList extends React.Component {
                         <li className="mt-3">1 $TAPE-$BNB LP = 160 $TAPE</li>
                         <li className="mt-2">1 $HEPA-$TAPE LP = 3,33 $TAPE</li>
                         <li className="mt-2">1 $TAPE-$MATIC LP = 16 $TAPE</li>
+                        <li className="mt-2">1 $TAPE-$USDH LP = 16 $TAPE</li>
                     </ul>
                 </div>
             </div>
