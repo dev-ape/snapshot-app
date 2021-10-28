@@ -89,7 +89,9 @@ export default function TierCalculation(props) {
                         </div>
                         <div className="mb-2">
                             <select id="desiredTier" className="form-select" aria-label="Target Tier:" onChange={handleDropdown}>
-                                <option defaultValue value="160000">King Kong (160,000 $TAPE in average)</option>
+                                <option defaultValue value="640000">Grandpa Ape (640,000 $TAPE in average)</option>
+                                <option value="320000">Daddy Ape (320,000 $TAPE in average)</option>
+                                <option value="160000">King Kong (160,000 $TAPE in average)</option>
                                 <option value="80000">Gorilla (80,000 $TAPE in average)</option>
                                 <option value="40000">Chimp (40,000 $TAPE in average)</option>
                                 <option value="20000">Ape (20,000 $TAPE in average)</option>
